@@ -9,8 +9,15 @@ const Video = ({ title, views, comments }) => {
                 allowFullScreen
                 title='Thinking in React'
             />
-            <h3>{title}</h3>
+            <h1>{title}</h1>
             <p>{`Views: ${views}`}</p>
+            <h3>Comments:</h3>
+            {comments.map((comment) => (
+                <div key={comment.id}>
+                    <p>User: {comment.user}</p>
+                    <p>Comment: {comment.comment}</p>
+                </div>
+            ))}
         </div>
     );
 };
